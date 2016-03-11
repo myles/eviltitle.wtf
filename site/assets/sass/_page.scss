@@ -1,0 +1,18 @@
+.form {
+  .input-group {
+    margin-bottom: 0.5em;
+  }
+}
+
+.footer {
+  text-align: center;
+  .heart {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+
+    * {
+      fill: #da3a35;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "jquery": {
+        "js": { "dist/jquery.js": "dist/jquery.min.js" }
+    },
+    "FitText.js": {
+        "js": "jquery.fittext.js"
+    },
+    "letteringjs": {
+        "js": "jquery.lettering.js"
+    },
+    "bootstrap-sass": {
+        "js": "assets/javascripts/bootstrap.min.js"
+    }
+}

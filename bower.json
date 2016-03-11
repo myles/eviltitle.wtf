@@ -1,0 +1,9 @@
+{
+  "name": "eviltitle_wtf-www",
+  "version": "1.0.0",
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "FitText.js": "~1.2.0",
+    "letteringjs": "~0.7.0"
+  }
+}
