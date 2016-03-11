@@ -4,6 +4,8 @@ require_once('./config.php');
 require_once('./utils.php');
 
 $is_lock = CheckLockFile();
+
+$msg = $_GET['msg'];
 ?>
 <html lang="en">
     <head>
@@ -30,6 +32,12 @@ $is_lock = CheckLockFile();
                 <h3 class="text-muted"><?php echo $site_title; ?></h3>
             </div>
             
+            <?php if ($msg == 'success') { ?>
+            <p class="alert alert-success">You have updated the status.</p>
+            <?php } elseif ($msg == 'error') { ?>
+            <p class="alert alert-danger">Something failed.</p>
+            <?php } ?>
+            
             <?php
                 if ($is_lock) {
                     $status = explode("\n", GetStatusFile());
@@ -44,14 +52,14 @@ $is_lock = CheckLockFile();
                 <p class="alert alert-danger"><?php echo $pg_con_warning; ?></p>
                 
                 <div class="form">
-                    <form action="send.php" method="post">
+                    <form action="send.php" method="post" autocomplete="off">
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" id="input-line-1" aria-describedby="input-line-1-character-count" maxlength="<?php echo $line_max_length; ?>">
+                            <input type="text" class="form-control" id="input-line-1" name="line-1" aria-describedby="input-line-1-character-count" maxlength="<?php echo $line_max_length; ?>" inputmode="verbatim">
                             <span class="input-group-addon" id="input-line-1-character-count"><?php echo $line_max_length; ?></span>
                         </div>
                     
                         <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" id="input-line-2" aria-describedby="input-line-2-character-count"  maxlength="<?php echo $line_max_length; ?>">
+                            <input type="text" class="form-control" id="input-line-2" name="line-2" aria-describedby="input-line-2-character-count"  maxlength="<?php echo $line_max_length; ?>" inputmode="verbatim">
                             <span class="input-group-addon" id="input-line-2-character-count"><?php echo $line_max_length; ?></span>
                         </div>
                     
