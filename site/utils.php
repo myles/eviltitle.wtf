@@ -18,7 +18,7 @@ function WriteStatusFile($line1, $line2) {
         date => date("N"),
         line1 => $line1,
         line2 => $line2
-    )
+    );
 
     $log_file = file_get_contents('log.json');
     $tempLog = json_decode($log_file);

@@ -43,6 +43,4 @@ function countdownTimer() {
 $(document).ready(function () {
     perview('#input-line-1', '#js-line-1', '#input-line-1-character-count');
     perview('#input-line-2', '#js-line-2', '#input-line-2-character-count');
-
-    setInterval(function () { countdownTimer(); }, 1000);
 });
