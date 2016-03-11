@@ -2,13 +2,14 @@ module.exports = function (grunt) {
     'use strict';
 
     var config = {
-        distribute: [
-            {
+        distribute: {
+            files: [{
                 expand: true,
-                src: ['./site/*.php'],
-                dest: ['dist/']
-            }
-        ]
+                cwd: './site',
+                src: '*.php',
+                dest: './dist/'
+            }]
+        }
     };
 
     grunt.config.set('copy', config);

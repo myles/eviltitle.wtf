@@ -12,7 +12,8 @@ module.exports = function (grunt) {
         'bower-mapper',
         'sass:distribute',
         'uglify:distribute',
-        'clean:dist'
+        'copy:distribute',
+        'compress:distribute'
     ]);
 
     grunt.registerTask('test', [
