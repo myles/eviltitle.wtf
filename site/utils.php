@@ -13,7 +13,17 @@ function GetStatusFile() {
 function WriteStatusFile($line1, $line2) {
     touch('./lock.txt');
     file_put_contents('./status.txt', $line1 . "\n" . $line2);
-    $log = $line1." --- ".$line2." |  Date: ".$date."\n";
-    error_log($log, 3, './log.txt');
+
+    $data = array(
+        date => date("N"),
+        line1 => $line1,
+        line2 => $line2
+    )
+
+    $log_file = file_get_contents('log.json');
+    $tempLog = json_decode($log_file);
+    array_push($tempLog, $data);
+    $jsonData = json_encode($tempLog);
+    file_put_contents('log.json', $jsonData);
 }
 ?>
