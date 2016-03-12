@@ -32,9 +32,9 @@ $msg = $_GET['msg'];
                 <h3 class="text-muted"><?php echo $site_title; ?></h3>
             </div>
             
-            <?php if ($msg == 'success') { ?>
+            <?php if ($msg == 'success' & $is_lock) { ?>
             <p class="alert alert-success">You have updated the status.</p>
-            <?php } elseif ($msg == 'error') { ?>
+            <?php } elseif ($msg == 'error' & $is_lock) { ?>
             <p class="alert alert-danger">Something failed.</p>
             <?php } ?>
             

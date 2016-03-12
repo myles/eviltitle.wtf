@@ -1,4 +1,6 @@
 <?php
+require_once('./config.php');
+
 function CheckLockFile() {
     return file_exists('./lock.txt');
 }
@@ -14,8 +16,12 @@ function WriteStatusFile($line1, $line2) {
     touch('./lock.txt');
     file_put_contents('./status.txt', $line1 . "\n" . $line2);
 
+    if (file_exists('./log.json') == FALSE) {
+        file_put_contents('./log.json', '[]');
+    }
+
     $data = array(
-        date => date("N"),
+        date => date("c"),
         line1 => $line1,
         line2 => $line2
     );

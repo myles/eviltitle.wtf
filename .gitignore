@@ -3,4 +3,5 @@ node_modules/
 site/assets/css/
 site/assets/javascript/libs/
 site/*.txt
+site/*.json
 dist/

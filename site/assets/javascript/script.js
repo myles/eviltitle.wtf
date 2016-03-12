@@ -3,8 +3,8 @@
 
 'use strict';
 
-var line_max_length = 15;
-var warning_alert_length = 10;
+var line_max_length = 16;
+var warning_alert_length = 5;
 
 function perview(input, output, count) {
     $(input).keyup(function () {
