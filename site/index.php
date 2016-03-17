@@ -17,7 +17,11 @@ $msg = $_GET['msg'];
         
         <link rel="stylesheet" href="/assets/css/style.css">
     </head>
-    <body>
+    <?php if ($is_lock) { ?>
+    <body class="lock-file-activated">
+    <?php } else { ?>
+    <body class="">
+    <?php } ?>
         <div class="container">
             <div class="header clearfix">
                 <nav>

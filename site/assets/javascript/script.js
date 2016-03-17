@@ -31,16 +31,25 @@ function perview(input, output, count) {
     });
 }
 
-function countdownTimer() {
-    var now = new Date(),
-        min = now.getMinutes(),
-        sec = now.getSeconds();
-    if ([0, 15, 30, 45].indexOf(min) !== -1 && sec === 0) {
-        document.location.reload(true);
+function redirectWhenLockFileDisappears() {
+    if ($('body').hasClass('lock-file-activated')) {
+        $.ajax({
+            type: 'GET',
+            url: './lock.txt',
+            success: function(resp) {
+                return true;
+            },
+            statusCode: {
+                404: function() {
+                    window.location = ('./index.php');
+                }
+            }
+        })
     }
 }
 
 $(document).ready(function () {
     perview('#input-line-1', '#js-line-1', '#input-line-1-character-count');
     perview('#input-line-2', '#js-line-2', '#input-line-2-character-count');
+    setInterval(redirectWhenLockFileDisappears, 3000);
 });
