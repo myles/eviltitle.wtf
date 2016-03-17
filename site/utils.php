@@ -12,6 +12,13 @@ function GetStatusFile() {
     }
 }
 
+function StatusFileCreatedPlus15Minutes() {
+    $time = new DateTime;
+    $time->setTimestamp(filemtime('./status.txt'));
+    $time->add(new DateInterval('PT15M'));
+    return $time->format('g:s A');
+}
+
 function WriteStatusFile($line1, $line2) {
     touch('./lock.txt');
     file_put_contents('./status.txt', $line1 . "\n" . $line2);

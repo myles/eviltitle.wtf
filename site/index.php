@@ -4,6 +4,7 @@ require_once('./config.php');
 require_once('./utils.php');
 
 $is_lock = CheckLockFile();
+$status = explode("\n", GetStatusFile());
 
 $msg = $_GET['msg'];
 ?>
@@ -44,10 +45,8 @@ $msg = $_GET['msg'];
             
             <?php
                 if ($is_lock) {
-                    $status = explode("\n", GetStatusFile());
             ?>
-                <p class="alert alert-info" id="js-count-down"></p>
-                
+                <p class="alert alert-info">Will be open to submissions again at <?php echo StatusFileCreatedPlus15Minutes(); ?>.</p>
                 <div class="jumbotron">
                     <p class="line-1" id="js-line-1"><?php echo $status[0]; ?></p>
                     <p class="line-2" id="js-line-2"><?php echo $status[1]; ?></p>
@@ -66,12 +65,12 @@ $msg = $_GET['msg'];
                             <input type="text" class="form-control" id="input-line-2" name="line-2" aria-describedby="input-line-2-character-count"  maxlength="<?php echo $line_max_length; ?>" inputmode="verbatim">
                             <span class="input-group-addon" id="input-line-2-character-count"><?php echo $line_max_length; ?></span>
                         </div>
-                    
+                        
                         <div class="jumbotron">
-                            <p class="line-1" id="js-line-1">&nbsp;</p>
-                            <p class="line-2" id="js-line-2">&nbsp;</p>
+                            <p class="line-1" id="js-line-1"><?php echo $status[0]; ?></p>
+                            <p class="line-2" id="js-line-2"><?php echo $status[1]; ?></p>
                         </div>
-                    
+                        
                         <div class="form-group form-group-lg">
                             <button type="submit" class="btn btn-default">Send</button>
                         </div>

@@ -1,3 +1,13 @@
+.jumbotron {
+  background-color: $gray-darker;
+  color: $gray-lighter;
+  
+  p {
+    font-family: $font-family-monospace;
+    text-align: left;
+  }
+}
+
 .form {
   .input-group {
     margin-bottom: 0.5em;
