@@ -54,6 +54,11 @@ $msg = $_GET['msg'];
             <?php } else { ?>
                 <p class="alert alert-danger"><?php echo $pg_con_warning; ?></p>
                 
+                <div class="jumbotron">
+                    <p class="line-1" id="js-line-1"><?php echo $status[0]; ?></p>
+                    <p class="line-2" id="js-line-2"><?php echo $status[1]; ?></p>
+                </div>
+                
                 <div class="form">
                     <form action="send.php" method="post" autocomplete="off">
                         <div class="input-group input-group-lg">
@@ -64,11 +69,6 @@ $msg = $_GET['msg'];
                         <div class="input-group input-group-lg">
                             <input type="text" class="form-control" id="input-line-2" name="line-2" aria-describedby="input-line-2-character-count"  maxlength="<?php echo $line_max_length; ?>" inputmode="verbatim">
                             <span class="input-group-addon" id="input-line-2-character-count"><?php echo $line_max_length; ?></span>
-                        </div>
-                        
-                        <div class="jumbotron">
-                            <p class="line-1" id="js-line-1"><?php echo $status[0]; ?></p>
-                            <p class="line-2" id="js-line-2"><?php echo $status[1]; ?></p>
                         </div>
                         
                         <div class="form-group form-group-lg">
