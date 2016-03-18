@@ -8,7 +8,9 @@ var warning_alert_length = 5;
 
 function perview(input, output, count) {
     $(input).keyup(function () {
-        $(output).text($(this).val());
+        var output_html = $(this).val();
+        output_html = output_html.split(' ').join('<span class="bull">&middot;</span>')
+        $(output).html(output_html);
 
         var character_count = $(this).val().length;
 

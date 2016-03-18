@@ -48,15 +48,23 @@ $msg = $_GET['msg'];
             ?>
                 <p class="alert alert-info">Will be open to submissions again at <?php echo StatusFileCreatedPlus15Minutes(); ?>.</p>
                 <div class="jumbotron">
-                    <p class="line-1" id="js-line-1"><?php echo $status[0]; ?></p>
-                    <p class="line-2" id="js-line-2"><?php echo $status[1]; ?></p>
+                    <?php
+                    $line1 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[0]);
+                    $line2 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[1]);
+                    ?>
+                    <p class="line-1" id="js-line-1"><?php echo $line1; ?></p>
+                    <p class="line-2" id="js-line-2"><?php echo $line2; ?></p>
                 </div>
             <?php } else { ?>
                 <p class="alert alert-danger"><?php echo $pg_con_warning; ?></p>
                 
                 <div class="jumbotron">
-                    <p class="line-1" id="js-line-1"><?php echo $status[0]; ?></p>
-                    <p class="line-2" id="js-line-2"><?php echo $status[1]; ?></p>
+                    <?php
+                    $line1 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[0]);
+                    $line2 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[1]);
+                    ?>
+                    <p class="line-1" id="js-line-1"><?php echo $line1; ?></p>
+                    <p class="line-2" id="js-line-2"><?php echo $line2; ?></p>
                 </div>
                 
                 <div class="form">

@@ -5,6 +5,11 @@
   p {
     font-family: $font-family-monospace;
     text-align: left;
+    white-space: pre-wrap;
+    
+    .bull {
+      color: $gray;
+    }
   }
 }
 
