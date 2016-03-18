@@ -11,16 +11,21 @@
 
 Install Grunt and Bower:
 
-  $ npm install -g grunt-cli bower
+```
+$ npm install -g grunt-cli bower
+```
 
 Install the Node.js and Bower dependencies:
 
-  $ npm install
-  $ bower install
+```
+$ npm install
+$ bower install
+```
 
 ### Usage
 
 To run the development web server:
 
-  $ grunt develop
-
+```
+$ grunt develop
+```
