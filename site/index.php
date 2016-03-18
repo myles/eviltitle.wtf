@@ -49,8 +49,8 @@ $msg = $_GET['msg'];
                 <p class="alert alert-info">Will be open to submissions again at <?php echo StatusFileCreatedPlus15Minutes(); ?>.</p>
                 <div class="jumbotron">
                     <?php
-                    $line1 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[0]);
-                    $line2 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[1]);
+                    $line1 = str_replace(' ', '<span class="bull">&bull;</span>', $status[0]);
+                    $line2 = str_replace(' ', '<span class="bull">&bull;</span>', $status[1]);
                     ?>
                     <p class="line-1" id="js-line-1"><?php echo $line1; ?></p>
                     <p class="line-2" id="js-line-2"><?php echo $line2; ?></p>
@@ -60,8 +60,8 @@ $msg = $_GET['msg'];
                 
                 <div class="jumbotron">
                     <?php
-                    $line1 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[0]);
-                    $line2 = preg_replace('/\s+/', '<span class="bull">&bull;</span>', $status[1]);
+                    $line1 = str_replace(' ', '<span class="bull">&bull;</span>', $status[0]);
+                    $line2 = str_replace(' ', '<span class="bull">&bull;</span>', $status[1]);
                     ?>
                     <p class="line-1" id="js-line-1"><?php echo $line1; ?></p>
                     <p class="line-2" id="js-line-2"><?php echo $line2; ?></p>
